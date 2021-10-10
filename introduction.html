@@ -3,11 +3,36 @@
 <head>
 <meta charset="utf-8">
 <title>先导视频</title>
+	<style>
+		#video p{margin: 10px 10px;}
+		.video{
+			text-align: center;
+			top: 150px;
+			padding-top: 200px;
+			/*position: absolute;*/
+		}
+		body {
+			background-image: url("images/titlepic/cram.jpg");
+			background-repeat: no-repeat;
+			background-size: cover;
+			min-height: 100%;
+			height: 100%;
+		}
+		html {
+			min-height: 100%;
+			height: 100%;
+		}
+	</style>
 </head>
 
 <body>
-	<center>
-	<p><iframe allowfullscreen="" height="450" width="600" src="https://v.qq.com/iframe/preview.html?vid=i0349dbmepb&amp;width=600&amp;height=450&amp;auto=0"></iframe></p>
-	</center>
+<div class="video">
+	<video controls="controls" autoplay="autplay" width="600px">
+		<source src="video/1.mp4" type="video/mp4">
+		<source src="video/1.webm" type="video/webm">
+		<source src="video/1.ogv" type="video/ogg">
+		<p>您的浏览器不支持video元素。</p>
+	</video>
+</div>
 </body>
 </html>
