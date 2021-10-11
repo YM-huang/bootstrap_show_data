@@ -1799,6 +1799,11 @@ button[id="selectAllBut"], button[id="deselectAllBut"], button[id="removeAllBut"
     margin: 0 auto
 }
 
+.little-inner {
+    max-width: 80%;
+    margin: 0 auto
+}
+
 .sec-title2 {
     position: relative;
     margin-bottom: 40px;
