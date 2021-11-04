@@ -378,7 +378,13 @@
             <div class="row clearfix">
                 <div class="education-inner wow fadeInUp">
                     <div class="inner-box">
-                        <div id="map" style="width: 1170px;height:500px;"></div>
+                        <div class="div">
+                            <div class="box">
+                                <div id="map" style="width: 1170px;height:500px;" class="box1"></div>
+                                <div id="map2" style="width: 1170px;height:500px;" class="box1"></div>
+                            </div>
+                        </div>
+<!--                        <div id="map" style="width: 1170px;height:500px;"></div>-->
                     </div>
                 </div>
             </div>
@@ -1394,17 +1400,17 @@
     var option = {
         tooltip: {},
         title : {
-            text: '升学压力分布图',
+            text: '初中升学压力分布图',
             left: 'center'
         },
         legend: {
             orient: 'vertical',
             left: 'left',
-            data:['小学升初中','初中升高中']
+            data:['小学升初中']
         },
         visualMap: {
             min: 0,
-            max: 50,
+            max: 10,
             left: 'left',
             top: 'bottom',
             text: ['高','低'],
@@ -1470,16 +1476,73 @@
                     {name: '香港',value: Math.round(Math.random()*100)},
                     {name: '澳门',value: Math.round(Math.random()*100)}
                 ]
-            },
+            }
+        ]
+    };
+
+    if (chart) {
+        chart.on('click', function (param) {
+            console.log(param);
+        });
+    }
+    // 为echarts对象加载数据
+    chart.setOption(option);
+
+</script>
+
+<script>
+    var chart = echarts.init(document.getElementById('map2'));
+    var itemStyle = {
+        normal:{
+            borderColor: 'rgba(0, 0, 0, 0.2)'
+        },
+        emphasis:{
+            shadowOffsetX: 0,
+            shadowOffsetY: 0,
+            shadowBlur: 20,
+            borderWidth: 0,
+            shadowColor: 'rgba(0, 0, 0, 0.5)'
+        }
+    };
+
+    var option = {
+        tooltip: {},
+        title : {
+            text: '高中升学压力分布图',
+            left: 'center'
+        },
+        legend: {
+            orient: 'vertical',
+            left: 'left',
+            data:['初中升高中']
+        },
+        visualMap: {
+            min: 30,
+            max: 50,
+            left: 'left',
+            top: 'bottom',
+            text: ['高','低'],
+            calculable : true
+        },
+        selectedMode: 'single',
+        series : [
             {
                 name: '初中升高中',
                 type: 'map',
-                mapType: 'china',
+                map: 'china',
                 itemStyle: itemStyle,
                 showLegendSymbol: true,
+                // zoom: 10,
+                // center: [115.97, 29.71],
+                roam: true,
+                // markPoint: {
+                //     data: [{
+                //         coord: [115.97, 29.71]
+                //     }]
+                // },
                 label: {
                     normal: {
-                        show: true
+                        show: true,
                     },
                     emphasis: {
                         show: true
