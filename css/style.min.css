@@ -1974,6 +1974,6 @@ button[id="selectAllBut"], button[id="deselectAllBut"], button[id="removeAllBut"
     width: 49%;
     /*margin-left: 3%;*/
     /*height: 100px;*/
-    background: #fff;
+    /*background: #fff;*/
     display: inline-block;/*行内块元素*/
 }
