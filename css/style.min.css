@@ -1961,7 +1961,7 @@ button[id="selectAllBut"], button[id="deselectAllBut"], button[id="removeAllBut"
     /*height: 118px;*/
 }
 .box{
-    background: #eee;
+    /*background: #eee;*/
     padding: 10px 0;
     white-space: nowrap;/*文本不会换行，文本会在在同一行上继续*/
     overflow-y:auto;/*可滑动*/
